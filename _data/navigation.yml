@@ -1,10 +1,15 @@
 # main links links
 main:
   - title: "Smartcoder.ru"
-    url: http://smartcoder.ru/
+    url: http://smartcoder.ru
 
   - title: "Java-курсы"
-    url: http://smartcoder.ru/java-1/
+    url: http://smartcoder.ru/java-1
     
   - title: "Android-курсы"
-    url: http://smartcoder.ru/android-1/
+    url: http://smartcoder.ru/android-1
+
+- title: "Основы программирования"
+    url: http://smartcoder.ru/prog-basics
+    
+    
