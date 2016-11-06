@@ -4,9 +4,9 @@ excerpt: "В статье будет представлен простейший
 modified: 2016-11-06T09:55:10-04:00
 header:
 tags: 
+  - git
   - java
-  - spring framework
-  - dependency injection
+  - maven
 ---
 
 Часто при создании небольших проектов или примеров необходимо чтобы git игнорировал
