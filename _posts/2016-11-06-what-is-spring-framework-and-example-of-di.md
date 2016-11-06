@@ -1,6 +1,6 @@
 ---
 title: "Что такое Spring Framework и для чего он нужен?"
-excerpt: "в статье будет представлен простейший пример использования dependency injection в Spring"
+excerpt: "В статье будет представлен простейший пример использования dependency injection в Spring"
 modified: 2016-11-06T09:55:10-04:00
 header:
 tags: 
@@ -47,6 +47,7 @@ Spring-фреймворк обеспечивает комплексную про
 
 # Создадим сущность _MessagePrinter_
 Это класс который имеет зависимость от сервиса _MessageService_
+
 ```
 package hello;
 
@@ -70,6 +71,7 @@ public class MessagePrinter {
 ```
 
 # Создадим и сам сервис _MessageService_
+
 ```
 package hello;
 
@@ -79,6 +81,7 @@ public interface MessageService {
 ```
 
 ## Далее нам понадобиться магия Spring, чтобы связать их вместе
+
 ```
 package hello;
 
