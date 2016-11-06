@@ -48,7 +48,7 @@ Spring-фреймворк обеспечивает комплексную про
 # Создадим сущность _MessagePrinter_
 Это класс который имеет зависимость от сервиса _MessageService_
 
-```
+```java
 package hello;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,7 +72,7 @@ public class MessagePrinter {
 
 # Создадим и сам сервис _MessageService_
 
-```
+```java
 package hello;
 
 public interface MessageService {
@@ -82,7 +82,7 @@ public interface MessageService {
 
 ## Далее нам понадобиться магия Spring, чтобы связать их вместе
 
-```
+```java
 package hello;
 
 import org.springframework.context.ApplicationContext;
