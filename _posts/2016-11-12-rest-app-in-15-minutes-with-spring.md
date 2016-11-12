@@ -22,6 +22,7 @@ REST (Representational State Transfer — «передача состояния 
 
 Считается что Всемирная Паутина(Web) является одной из возможных реализаций обсуждаемого архитектурного стиля.
 Давайте перечислим кратко эти ограничения:
+
  * Клиент-серверная архитектура
  * Отсутствие состояния
  * Кэширование
@@ -35,6 +36,7 @@ REST (Representational State Transfer — «передача состояния 
 Для веб-служб, построенных с учётом REST (то есть не нарушающих накладываемых им ограничений), применяют термин «RESTful».
 
 Подробнее читайте тут:
+ 
  * [REST](https://ru.wikipedia.org/wiki/REST)
  * [rest-foundations-restful](https://dzone.com/refcardz/rest-foundations-restful)
  * [fielding/pubs/dissertation](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
