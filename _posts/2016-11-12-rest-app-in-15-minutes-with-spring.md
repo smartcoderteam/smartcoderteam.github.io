@@ -208,9 +208,8 @@ java-объекты в JSON и обратно:
 }]
 ```
 
-Попробуйте скачать код по ссылке и поиграться сами:
-
-TODO
+Попробуйте скачать код по ссылке запустить и поэкспериментировать:
+[https://github.com/levrun/spring-rest-example](https://github.com/levrun/spring-rest-example)
 
 
 
