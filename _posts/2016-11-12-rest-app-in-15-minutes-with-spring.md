@@ -34,12 +34,14 @@ REST (Representational State Transfer — «передача состояния 
  * Взаимодействие через слои
 
 Для веб-служб, построенных с учётом REST (то есть не нарушающих накладываемых им ограничений), применяют термин «RESTful».
+{: .notice}
 
 Подробнее читайте тут:
- 
+
  * [wiki about REST](https://ru.wikipedia.org/wiki/REST)
  * [rest-foundations-restful](https://dzone.com/refcardz/rest-foundations-restful)
  * [fielding/pubs/dissertation](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
+
 
 ## Пример приложения
 
@@ -55,13 +57,13 @@ REST (Representational State Transfer — «передача состояния 
   URI(Uniform Resource Identifiers). Для того чтобы получить доступ к ресурсу приложение должно использовать одну из всеми известных 
   HTTP-операций(GET, POST, PUT, DELETE, etc). 
   
- * https://{service}.yourservice.com/{version}/{resourcepath}
+ * [https://{service}.yourservice.com/{version}/{resourcepath}]()
 
  * примеры URI которые мы будем использовать в нашем приложении:
-   1 https://apps.myplay.com/v1/categories 
-   2 https://apps.myplay.com/v1/categories/1
-   3 https://apps.myplay.com/v1/categories/1/apps
-   4 https://apps.myplay.com/v1/categories/2/apps/3
+   - https://apps.myplay.com/v1/categories 
+   - https://apps.myplay.com/v1/categories/1
+   - https://apps.myplay.com/v1/categories/1/apps
+   - https://apps.myplay.com/v1/categories/2/apps/3
  
 Применяя HTTP-глагол GET на URI _1_ можно будет получить список доступных категорий для наших программ.
 POST же создаст нам новую категорию. DELETE удалит все категории. И так далее. Логика довольно проста.
@@ -71,10 +73,10 @@ POST же создаст нам новую категорию. DELETE удали
 Первая буква в REST как раз говорит об этом - R(Representational State - состояние представления).
 Таким образом, получая лишь представления о состоянии ресурса клиент может каким то образом взаимодействовать с системой.
 Существует возможность указать серверу какое представление нам подходит через задание content-type:
-
 ```
 curl –u user:password -d @categories.xml -H "Content-type: text/xml" http://myplay.com/categories
 ```
+{: .notice}
 
 Подробнее почерпнуть знания про создание URI для вашего сервиса можно тут:
  
@@ -84,12 +86,14 @@ curl –u user:password -d @categories.xml -H "Content-type: text/xml" http://my
 
 ### Конфигурация Spring
 
-Конфигурация приложения описана в классе _AppConfig_. 
+Конфигурация приложения описана в классе _AppConfig_: 
 
 ```java
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "ru.smartcoder.spring_rest_example")
+public class AppConfig {
+}
 ```
 
  * @Configuration сообщает Spring, что это конфигурационные настройки нашего приложения
@@ -100,9 +104,9 @@ curl –u user:password -d @categories.xml -H "Content-type: text/xml" http://my
 Начиная с выпуска спецификации Servlet 3.0 стало возможным сконфигурировать сервлет-контейнер почти без xml.
 Совершенно точно, нам не нужен никакой _web.xml_. Класс _ServletContainerInitializer_ позволяет нам зарегестрировать
 нам все те артефакты, что мы определяли раньше в _web.xml(filters, listeners, servlets etc)_
-
 Подробнее можно почитать тут: 
 [when-use-abstractannotationconfigdispatcherservletinitializer-and-webapplication](http://stackoverflow.com/questions/26676782/when-use-abstractannotationconfigdispatcherservletinitializer-and-webapplication)
+{: .notice}
 
 ### Хранилище данных
 
@@ -130,6 +134,7 @@ public class AppCategoriesDao {
 ### REST-endpoints via Spring MVC Controllers
 
 Контроллеры _ApplicationController_ и _CategoriesController_ будут содержать следующие аннотации:
+
  * @RestController
  * @GetMapping
  * @DeleteMapping
@@ -154,8 +159,8 @@ public class ApplicationController {
 
 ### JSON
 
-Также подключим в наш _pom.xml_ зависимость от чудевсной библиотеки jackson, которая позволит автоматически преобразовывать
-java-объекты в JSON.
+Также подключим в наш _pom.xml_ зависимость от чудесной библиотеки _jackson_, которая позволит автоматически преобразовывать
+java-объекты в JSON и обратно:
  
 ```xml
  <dependency>
@@ -187,6 +192,7 @@ java-объекты в JSON.
 Открыв бразузер по следующему адресу:
 http://localhost:9090/v1/categories
 Мы получим следующий JSON:
+
 ```
 [{
 	"id": 1,
@@ -195,18 +201,6 @@ http://localhost:9090/v1/categories
 {
 	"id": 2,
 	"name": "Multimedia"
-},
-{
-	"id": 3,
-	"name": "Productivity"
-},
-{
-	"id": 4,
-	"name": "Tools"
-},
-{
-	"id": 5,
-	"name": "Health"
 },
 {
 	"id": 6,
