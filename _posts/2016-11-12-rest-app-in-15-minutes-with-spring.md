@@ -49,23 +49,22 @@ REST (Representational State Transfer — «передача состояния 
 Он позволит вернуть клиенту набор программ разбитых по подкатегориям.
 
 В данной статье хотелось бы показать практичный пример REST-подобного приложения. Чтобы уложиться в заявленный 15-минутный формат
-придется ограничиться лишь одним критерием. Однако надо заметить что он является наиболее характерным и всегда упоминаемым когда говорят про _RESTful services_.
+придется ограничиться лишь одним критерием - "Идентификация ресурсов". Однако надо заметить что он является наиболее характерным и всегда упоминаемым когда говорят про _RESTful services_.
 
- * Идентификация ресурсов:
-  Все REST сервисы обычно организованы в набор ресурсов. Ресурс это набор однотипных данных: 
+ * Все REST сервисы обычно организованы в набор ресурсов. Ресурс это набор однотипных данных: 
   пользователи, товары в интернет магазине, категории, программы и т.п. Каждый ресурс идентифицируется одним или больше
   URI(Uniform Resource Identifiers). Для того чтобы получить доступ к ресурсу приложение должно использовать одну из всеми известных 
   HTTP-операций(GET, POST, PUT, DELETE, etc). 
   
- * [https://{service}.yourservice.com/{version}/{resourcepath}]()
+ * Вот так можно представить примерный шаблон URI для REST [https://{service}.yourservice.com/{version}/{resourcepath}]()
 
- * примеры URI которые мы будем использовать в нашем приложении:
+ * Давайте набросаем примеры URI которые мы будем использовать в нашем приложении:
    - https://apps.myplay.com/v1/categories 
    - https://apps.myplay.com/v1/categories/1
    - https://apps.myplay.com/v1/categories/1/apps
    - https://apps.myplay.com/v1/categories/2/apps/3
  
-Применяя HTTP-глагол GET на URI _1_ можно будет получить список доступных категорий для наших программ.
+Применяя HTTP-глагол GET на первом URI можно будет получить список доступных категорий для наших программ.
 POST же создаст нам новую категорию. DELETE удалит все категории. И так далее. Логика довольно проста.
 Использовать то, что уже прекрасно работает и широко применяется. 
 
@@ -103,9 +102,8 @@ public class AppConfig {
 Отдельно хотелось бы упомянуть про класс _AppInitializer_.
 Начиная с выпуска спецификации Servlet 3.0 стало возможным сконфигурировать сервлет-контейнер почти без xml.
 Совершенно точно, нам не нужен никакой _web.xml_. Класс _ServletContainerInitializer_ позволяет нам зарегестрировать
-нам все те артефакты, что мы определяли раньше в _web.xml(filters, listeners, servlets etc)_
-Подробнее можно почитать тут: 
-[when-use-abstractannotationconfigdispatcherservletinitializer-and-webapplication](http://stackoverflow.com/questions/26676782/when-use-abstractannotationconfigdispatcherservletinitializer-and-webapplication)
+нам все те артефакты, что мы определяли раньше в _web.xml(filters, listeners, servlets etc)_ 
+[abstractannotationconfigdispatcherservletinitializer](http://stackoverflow.com/questions/26676782/when-use-abstractannotationconfigdispatcherservletinitializer-and-webapplication)
 {: .notice}
 
 ### Хранилище данных
@@ -190,7 +188,9 @@ java-объекты в JSON и обратно:
 ### Результат
 
 Открыв бразузер по следующему адресу:
-http://localhost:9090/v1/categories
+
+[http://localhost:9090/v1/categories]()
+
 Мы получим следующий JSON:
 
 ```
