@@ -12,26 +12,29 @@ tags:
 ## Введение
 Spring web фреймворк разработан, чтобы облегчить жизнь современному enterprise разработчику создающему web-приложения.
 Он базируется на популярном архитектурном шаблоне: MVC(Model-View-Controller). Приложения получается
-слабо связным и гибким как и сам Spring фреймворк.
+слабо связными и гибкими в настройке как и сам Spring фреймворк.
 
 ## Жизненный цикл запроса
 Каждый раз когда пользователь нажимает ссылку или отправляет форму в web-браузере запрос отправляется на сервер.
 Давайте посмотрим на схему обработки запроса в Spring MVC(ссылка кликабельна и ведет на документацию на spring.io):
 
-[![image-left]({{ site.url }}{{ site.baseurl }}/images/spring-mvc-request-processing.jpg){: .align-left}](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html)
+[![image-left]({{ site.url }}{{ site.baseurl }}/images/spring-mvc-request-processing.jpg)](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html)
 
 Spring MVC использует подход называемый [wiki/Front_controller](https://en.wikipedia.org/wiki/Front_controller).
 В роли главного сервлета или front controller,  принимающего все входящие запросы выступает _DispatcherServlet_. 
 Работа DispatcherServlet состоит в том, чтобы послать запрос на соответствующий Spring MVC контроллер.
-Он пользуется помощью так называемых _handler mapping_ которые помогают ему определить какой именно
+Он пользуется помощью так называемых _handler mappings_ которые помогают ему определить какой именно
 контроллер нужно вызвать.
 
-После этого контроллер начинает выполняться. Однако стоит заметить, что обычно хорошо спроектированный контроллер 
-делегирует работу по выполнению запроса на какой либо сервисный метод содержащий бизнес-логику.
+После этого контроллер начинает отрабатывать. 
 
-Обычно после выполнения бизнес-логики пользователю нужно отдать какую то информацю, чтобы показать результат.
-Эта информация обычно храниться в модели. Однако информацию для пользователя должна пройти обработку, чтобы
-принять удобоваримый вид, например HTML. Таким образом контроллер посылает модель и название view обратно
+Стоит заметить, что обычно хорошо спроектированный контроллер 
+делегирует работу по выполнению запроса на какой либо сервисный метод содержащий бизнес-логику.
+{: .notice}
+
+Обычно после выполнения бизнес-логики пользователю нужно показать какую то информацю как результат.
+Эта информация обычно храниться в модели. Однако информация пеед показом должна пройти обработку, чтобы
+принять удобоваримый вид, например HTML. Для этого контроллер посылает модель и название view обратно
 в _DispatcherServlet_. Таким образом контролеер отвязан от конкретной реализации view. 
 _DispatcherServlet_ посылает запрос в _view resolver_ чтобы понять какую действительно HTML-страницу нужно показать
 пользователю.
@@ -72,10 +75,11 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 Как вы уже догадались, в отдельном приложении может быть несколько _DispatcherServlet_.
 {: .notice}
 
-Таким образом, отдельные бины могут быть переопредлены в _WebServletApplicationContext_ если это нужно.
+Таким образом, отдельные бины могут быть переопределены в _WebServletApplicationContext_, если это нужно.
+
 Рекомендую почитать информацию по этой теме тут: [what-is-the-difference-between-applicationcontext-and-webapplicationcontext](http://stackoverflow.com/questions/11708967/what-is-the-difference-between-applicationcontext-and-webapplicationcontext-in-s)
 
-[![image-left]({{ site.url }}{{ site.baseurl }}/images/mvc-context-hierarchy.png){: .align-left}](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html)
+[![image-left]({{ site.url }}{{ site.baseurl }}/images/mvc-context-hierarchy.png)](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html)
 
 В простейшем случае настройка _WebAppContext_ сведется к такому Java-config:
 
@@ -133,9 +137,7 @@ public class AppConfig {
 Зайдя по ссылке [http://localhost:9090/hello](http://localhost:9090/hello) вы увидите что наш контроллер отработал успешно.
 
 ## Заключение
-Рабочий код можно скачать по ссылке: []()
-
-TODO
+Рабочий код можно скачать по ссылке: [https://github.com/levrun/spring-mvc-example](https://github.com/levrun/spring-mvc-example)
 
 
 
