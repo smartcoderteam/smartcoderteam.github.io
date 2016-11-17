@@ -72,9 +72,10 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 
 }
 ```
+
 ## Spring Boot
-Насмотря на то, что название статьи указывается как Spring Boot, часть про него получилась самая короткая.
-Однако насмотря на свою краткость аннотация _@SpringBootApplication_ скрывает под собой следующее:
+Насмотря на то, что в название статьи фигурирует _Spring Boot_, часть про него получилась самая короткая.
+Лаконичная аннотация _@SpringBootApplication_ скрывает под собой следующее:
 
  * @Configuration - помечает класс как источник бинов для контекста приложения(application context) 
  * @EnableAutoConfiguration - указывает Spring Boot начать добавлять бины базируясь на настройках classpath, других бинах, и других настроечных параметрах.
@@ -115,6 +116,6 @@ public class Application {
  * Откройте в браузере [http://localhost:8080](http://localhost:8080)
 
 ## Код приложения
-Код на github можно скачать по следующей ссылке: TODO
+Код на github можно скачать по следующей ссылке: [https://github.com/levrun/spring-boot-example](https://github.com/levrun/spring-boot-example)
 
 По мотивам: [https://spring.io/guides/gs/securing-web](https://spring.io/guides/gs/securing-web)
