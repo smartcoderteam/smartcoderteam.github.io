@@ -116,6 +116,6 @@ public class Application {
  * Откройте в браузере [http://localhost:8080](http://localhost:8080)
 
 ## Код приложения
-Код на github можно скачать по следующей ссылке: [https://github.com/levrun/spring-boot-example](https://github.com/levrun/spring-boot-example)
+[https://github.com/levrun/spring-boot-example](https://github.com/levrun/spring-boot-example)
 
 По мотивам: [https://spring.io/guides/gs/securing-web](https://spring.io/guides/gs/securing-web)
