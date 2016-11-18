@@ -91,7 +91,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 интеграцию со Spring-Security - [_thymeleaf-extras-springsecurity3_](https://github.com/thymeleaf/thymeleaf-extras-springsecurity)
  
  ```xml
- <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
