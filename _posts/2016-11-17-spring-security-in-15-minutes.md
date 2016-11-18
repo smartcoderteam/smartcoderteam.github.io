@@ -32,7 +32,7 @@ tags:
 ## Первичная настройка Spring-Security
 Давайте представим, что нам хочется предотвратить неавторизованный доступ
 к страничке [http://localhost:8080/hello](http://localhost:8080/hello).
-Сейчас если пользователь нажмет ссылку на базовой странице[http://localhost:8080/base](http://localhost:8080/base)
+Сейчас если пользователь нажмет ссылку на базовой странице [http://localhost:8080/base](http://localhost:8080/base)
 ничто не остановит его. Вы должны добавить какой то _барьер_ который бы заставлял
 пользователя авторизоваться перед тем как увидеть эту страничку.
 Вы сделаете это сконфигурировав Spring Security. Если Spring Security
@@ -85,12 +85,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
  * *.logout().permitAll()* определяет что разлогиниться могут все
  * *configureGlobal(AuthenticationManagerBuilder)* устанавливает in-memory хранилище пользователей с одним пользователем 
  
- ## Создадим login-страницу
+## Создадим login-страницу
  
 Добавим файл _src/main/resources/templates/login.html_  с шаблоном _thymeleaf_ в котором включим 
 интеграцию со Spring-Security - [_thymeleaf-extras-springsecurity3_](https://github.com/thymeleaf/thymeleaf-extras-springsecurity)
  
- ```html
+ ```xml
  <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
@@ -112,12 +112,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 </body>
 </html>
  ```
+ 
  И не забудем добавить в _MvcConfig_ для страницы логина натройку контроллера - _registry.addViewController("/login").setViewName("login");_
  
  А также изменим страничку _hello_ добавив туда ссылку для разлогинивания:
  
- ```html
- <!DOCTYPE html>
+ ```xml
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <head>
@@ -143,9 +143,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 ```
 
 ## Как это устроено?
-Эта простейшая авторизация работает благодаря кукам.
-Рекомендую отследить момент до логина и после и посмотреть на состояние куки с именем JSESSIONID. 
-Вы увидете что после логина кука не меняет значение. После разлогинивания это значение поменяется, что 
+Эта простейшая авторизация работает благодаря [HTTP_cookie](https://en.wikipedia.org/wiki/HTTP_cookie).
+Рекомендую отследить момент до логина и после и посмотреть на состояние cookie с именем JSESSIONID. 
+Вы увидете что после логина cookie не меняет значение. После разлогинивания это значение поменяется, что 
 и будет означать что пользователь вышел из системы.
 
 В chrome нажмите Ctrl-Shift-I -> Network tab и далее заголовки httml запроса
@@ -163,7 +163,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
  * Попробуйте зайти введя правильный логин и пароль на страничке http://localhost:8080/login
 
 ## Код приложения
-[https://github.com/levrun/spring-boot-example](https://github.com/levrun/spring-boot-example)
+[https://github.com/levrun/spring-security-example](https://github.com/levrun/spring-security-example)
 
 По мотивам: [https://spring.io/guides/gs/securing-web](https://spring.io/guides/gs/securing-web)
  
