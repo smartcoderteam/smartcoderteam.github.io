@@ -90,7 +90,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 Добавим файл _src/main/resources/templates/login.html_  с шаблоном _thymeleaf_ в котором включим 
 интеграцию со Spring-Security - [_thymeleaf-extras-springsecurity3_](https://github.com/thymeleaf/thymeleaf-extras-springsecurity)
  
- ```xml
+```xml
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
@@ -110,13 +110,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 </form>
 </body>
 </html>
- ```
- 
- И не забудем добавить в _MvcConfig_ для страницы логина натройку контроллера - _registry.addViewController("/login").setViewName("login");_
+``` 
+
+И не забудем добавить в _MvcConfig_ для страницы логина натройку контроллера - _registry.addViewController("/login").setViewName("login");_
  
  А также изменим страничку _hello_ добавив туда ссылку для разлогинивания:
  
- ```xml
+```html
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <head>
@@ -129,14 +129,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         </form>
     </body>
 </html>
- ```
- 
- Мы показываем имя пользователя на страничке благодаря использованию интеграции со Spring Security _HttpServletRequest#getRemoteUser()_
- Ссылка "Sign Out" создаст POST запрос к "/logout" и далее переведет пользователя на "/login?logout". Благодаря чему пользователь увидит 
- это сообщение:
- 
- ```html
- <div th:if="${param.logout}">
+```
+
+Мы показываем имя пользователя на страничке благодаря использованию интеграции со Spring Security _HttpServletRequest#getRemoteUser()_
+Ссылка "Sign Out" создаст POST запрос к "/logout" и далее переведет пользователя на "/login?logout". Благодаря чему пользователь увидит 
+это сообщение:
+
+```html
+<div th:if="${param.logout}">
     You have been logged out.
 </div>
 ```
@@ -154,7 +154,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 которому он определяет его при последующих запросах. Это все похоже на работу сессий в сервлетах.
 Подробнее прочитайте вот эту ссылку [how-does-spring-security-sessions-work](http://stackoverflow.com/questions/8425856/how-does-spring-security-sessions-work)
  
- ## Запуск
+## Запуск
+
  * Запустите main-метод
  * Откройте в браузере [http://localhost:8080](http://localhost:8080)
  * Попытайтесь зайти на [http://localhost:8080/hello](http://localhost:8080/hello) не вводя имя и пароль. 
@@ -162,6 +163,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
  * Попробуйте зайти введя правильный логин и пароль на страничке http://localhost:8080/login
 
 ## Код приложения
+
 [https://github.com/levrun/spring-security-example](https://github.com/levrun/spring-security-example)
 
 По мотивам: [https://spring.io/guides/gs/securing-web](https://spring.io/guides/gs/securing-web)
