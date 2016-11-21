@@ -11,7 +11,7 @@ tags:
 
 ## Введение
 
-Давайте рассмотрим _классический_ пример того, с чем может столкнуться каждый программист не изучавший ранее
+Давайте рассмотрим _классический_ пример того, с чем может столкнуться программист не изучавший ранее
 как работают числа с плавающей точкой в современных компьютерных системах:
 
 ```java
@@ -48,8 +48,8 @@ public class FloatingNumbersMagic {
 На основе этих элементов ЛЕГКО построить схемы хранения ДВОИЧНЫХ чисел
 и выполнения вычислений с ними.
 
-Конечно возможно сэмулировать поведение десятичных чисел с двоичным
-представлением однако это будет менее производительно.
+Конечно возможно сэмулировать поведение десятичных чисел используя двоичное
+представление однако это будет менее производительно.
 Если бы компьютеры использовали десятичные числа они бы были
 медленнее и потребляли бы больше памяти по сравнению с использованием двоичной арифметики.
 
@@ -83,5 +83,6 @@ public class BigDecimalExample {
  * [http://stackoverflow.com/questions/588004/is-floating-point-math-broken](http://stackoverflow.com/questions/588004/is-floating-point-math-broken)
  * [Что нужно знать про арифметику с плавающей запятой](https://habrahabr.ru/post/112953/)
  * [https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html](https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html)
+ * [What Every Computer Scientist Should Know About Floating-Point Arithmetic](http://www.validlab.com/goldberg/paper.pdf)
 
 
