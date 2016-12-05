@@ -101,7 +101,9 @@ abstract class CustomerCreations {
 Читайте [Growing Object Oriented Software Guided by Tests](http://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627)
 Эта книга  обязательна к прочтению.
 Она описывает процесс создания приложения с нуля до полно-функционального приложения. Авторы объясняют много аспектов разработки и как внедрить тестирование на разных стадиях проекта.
+
 Если вы не уверены в чем то, то вы всегда сможете написать в эту [рассылку](https://groups.google.com/forum/#!forum/growing-object-oriented-software) с кучей умных разработчиков.
+{: .notice}
 
 По мотивам: [How-to-write-good-tests](https://github.com/mockito/mockito/wiki/How-to-write-good-tests)
 
