@@ -98,7 +98,8 @@ abstract class CustomerCreations {
 ```
 Сутью Mockito является концентрирование на взаимодействие между объектами, что является важной частью Объектно Ориентированного Программирования ([или messaging](http://c2.com/cgi/wiki?AlanKayOnMessaging)).
 
-Читайте [Growing Object Oriented Software Guided by Tests](http://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627)
+##  Читайте [Growing Object Oriented Software Guided by Tests](http://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627)
+
 Эта книга  обязательна к прочтению.
 Она описывает процесс создания приложения с нуля до полно-функционального приложения. Авторы объясняют много аспектов разработки и как внедрить тестирование на разных стадиях проекта.
 
